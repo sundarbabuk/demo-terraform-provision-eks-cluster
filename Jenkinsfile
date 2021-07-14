@@ -49,5 +49,17 @@ pipeline {
                 sh "/var/jenkins_home/terraform show"
             }
         }
+
+        stage("Sleep time") {
+            steps {
+                sh 'sleep 120'
+            }
+        }
+
+        stage("EKS Cluster De-Provisioning") {
+            steps {
+                sh "/var/jenkins_home/terraform destroy -auto-approve"
+            }
+        }
     }
 }
