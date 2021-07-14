@@ -13,6 +13,7 @@ pipeline {
             name: 'BRANCH_NAME')
     }
     
+    stages {
       
         stage("IaC Initialize") {
             steps {
@@ -49,3 +50,4 @@ pipeline {
             }
         }
     }
+}
