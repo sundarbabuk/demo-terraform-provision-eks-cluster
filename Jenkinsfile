@@ -17,7 +17,7 @@ pipeline {
       
         stage("IaC Initialize") {
             steps {
-                sh "/var/jenkins_home/terraform init"
+                sh "/var/jenkins_home/terraform init -upgrade"
             }
         }
 
