@@ -23,7 +23,7 @@ pipeline {
       
         stage("IaC Initialize") {
             steps {
-                sh "/var/jenkins_home/terraform init -upgrade"
+                sh "/var/jenkins_home/terraform init -reconfigure"
             }
         }
 
@@ -46,7 +46,7 @@ pipeline {
                 }
             steps {
                 // sh "terraform apply -input=false plan.out"
-                sh "/var/jenkins_home/terraform destroy -auto-approve"
+                sh "/var/jenkins_home/terraform apply -auto-approve"
                 }
         }
 
