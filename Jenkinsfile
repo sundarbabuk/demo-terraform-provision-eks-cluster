@@ -68,12 +68,14 @@ pipeline {
         stage("Sleep time") {
             steps {
             //     sh 'sleep 120'
+            echo "complete"
             }
         }
 
         stage("EKS Cluster De-Provisioning") {
             steps {
             //     sh "/var/jenkins_home/terraform destroy -auto-approve"
+            echo "complete"
             }
         }
     }
