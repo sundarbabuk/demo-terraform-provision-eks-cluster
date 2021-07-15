@@ -209,19 +209,25 @@ pipeline {
                     }
                 }
 
+                stage("Service Virtualization Test") {
+                    steps {
+                        echo "Complete"
+                    }
+                }
+
                 stage("Regression Test") {
                     steps {
                         echo "Complete"
                     }
                 }
 
-                stage("Destroy Dev Environment") {
+                stage("Generate SBOM") {
                     steps {
                         echo "Complete"
                     }
                 }
 
-                stage("Generate SBOM") {
+                stage("Destroy Dev Environment") {
                     steps {
                         echo "Complete"
                     }
