@@ -13,6 +13,10 @@ pipeline {
             name: 'BRANCH_NAME')
     }
     
+    options {
+        ansiColor('xterm')
+    }
+
     stages {
       
         stage("IaC Initialize") {
@@ -40,7 +44,7 @@ pipeline {
                 }
             steps {
                 // sh "terraform apply -input=false plan.out"
-                sh "/var/jenkins_home/terraform apply -auto-approve"
+                sh "/var/jenkins_home/terraform destroy -auto-approve"
                 }
         }
 
@@ -63,13 +67,13 @@ pipeline {
 
         stage("Sleep time") {
             steps {
-                sh 'sleep 120'
+            //     sh 'sleep 120'
             }
         }
 
         stage("EKS Cluster De-Provisioning") {
             steps {
-                sh "/var/jenkins_home/terraform destroy -auto-approve"
+            //     sh "/var/jenkins_home/terraform destroy -auto-approve"
             }
         }
     }
