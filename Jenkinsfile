@@ -53,14 +53,14 @@ pipeline {
                 sh "/var/jenkins_home/terraform show"
 
                 // publish html
-                publishHTML target: [
-                allowMissing: false,
-                alwaysLinkToLastBuild: false,
-                keepAll: true,
-                reportDir: 'coverage',
-                reportFiles: 'index.html',
-                reportName: 'EKS Report'
-                ]
+                // publishHTML target: [
+                // allowMissing: false,
+                // alwaysLinkToLastBuild: false,
+                // keepAll: true,
+                // reportDir: 'coverage',
+                // reportFiles: 'index.html',
+                // reportName: 'EKS Report'
+                // ]
                 
             }
         }
