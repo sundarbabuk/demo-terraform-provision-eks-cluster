@@ -56,7 +56,7 @@ pipeline {
             }
         }
 
-        stage("IaC De-Provisioning") {
+        stage("IaC Provisioning") {
             when {
                 expression { params.BRANCH_NAME == 'main' }
                 }
